@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.mythymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<h1>Root Index Page</h1>
+	<h3>This is an non-secure page</h3>
+	This page is accessible by anybody.
+	<ul>
+		<li>Go to the <a href="" th:href="@{/Member}">Member Page</a></li>
+		<li>Go to the <a href="" th:href="@{/Admin/}">Admin Page</a></li>
+		<li>Go to the <a href="" th:href="@{/Guest}">Guest Page</a></li>
+		<li>Go to the <a href="" th:href="@{/login}">Login Page</a></li>
+		<li>Go to the <a href="" th:href="@{/Registration}">Register User Page</a></li>
+		<li>Go to the <a href="" th:href="@{/AddContact}">Add new Contact Page</a></li>
+		<li>Go to the <a href="" th:href="@{/View}">View Contact Page</a></li>
+	</ul>
+</body>
+</html>

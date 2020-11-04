@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.mythymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Index</title>
+</head>
+<body>
+	<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+		<h1>Guest</h1>
+		This is page is accessible for <span sec:authentication="name"></span><br> <br> As a
+		User's Role: <span sec:authentication="principal.authorities"></span>
+		<div>
+			<ul>
+				<li><a href="/" th:href="@{/}">Back to index page.</a></li>
+				<li><a href="/View" th:href="@{/View}">view contacts</a></li>
+			</ul>
+			<form action="#" th:action="@{/logout}" method="post">
+				<input type="submit" value="Logout">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment 2</title>
+<link href="/static/style.css" type="text/css" rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+	<form action="#" th:action="@{/Registration}" method="post">
+		<div class="container">
+			<h1>Add contact</h1>
+			<label for="email">
+				<b>User Name :</b>
+			</label>
+			<input type="text" placeholder="Enter Name" name="Username" required>
+			<label for="pass">
+				<b>Password : </b>
+			</label>
+			<input type="text" placeholder="Enter password" name="pass" required>
+			<label>
+				<b>Select Role</b>
+			</label>
+			<input type="checkbox" value="1" name="admin">
+			Admin
+			<input type="checkbox" value="3" name="member">
+			Member
+			<input type="checkbox" value="2" name="guest">
+			Guest
+			<hr>
+			<input type="submit" class="registerbtn">
+		</div>
+	</form>
+	<a href="/View" th:href="@{/View}">view contacts</a>
+</body>
+</html>

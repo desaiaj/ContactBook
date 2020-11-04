@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Welcome</title>
+</head>
+<body>
+	<h1>Admin</h1>
+	<div th:fragment="logout" class="logout" sec:authorize="isAuthenticated()">
+		Welcome <span sec:authentication="name"></span> As <span
+			sec:authentication="principal.authorities"></span>
+		<div>
+			<ul>
+				<li><a href="/" th:href="@{/}">Back to index page.</a></li>
+				<li><a href="/View" th:href="@{/View}">view contacts</a></li>
+			</ul>
+			<form action="#" th:action="@{/logout}" method="post">
+				<input type="submit" value="Logout">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Exercise 10</title>
+</head>
+
+<body style="background-color: aliceblue; text-align: -webkit-center;">
+	<div>
+		<h1>View contact</h1>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Number</th>
+				<th>Address</th>
+				<th>Email</th>
+				<th>Role</th>
+			</tr>
+			<tr th:each="c : ${list}">
+				<td th:text="${c.id}"></td>
+				<td th:text="${c.name}"></td>
+				<td th:text="${c.number}"></td>
+				<td th:text="${c.address}"></td>
+				<td th:text="${c.email}"></td>
+				<td th:text="${c.role}"></td>
+				<td><a href="" th:href="@{/edit/{id}(id=${c.id})}">Edit</a></td>
+				<td><a href="" th:href="@{/Delete/{id}(id=${c.id})}">Delete</a></td>
+			</tr>
+		</table>
+		<a href="/" th:href="@{/}">Add new Contact</a>
+		<form action="#" th:action="@{/logout}" method="post">
+			<input type="submit" value="Logout">
+		</form>
+	</div>
+</body>
+</html>
